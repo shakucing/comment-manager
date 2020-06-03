@@ -1,0 +1,62 @@
+<div class="row w-100" *ngIf="post">
+    <div class="card col-12 m-3 border-0"
+        style="background-image: url(https://wallpapersmug.com/download/2248x2248/f0932e/landscape-minimal-stars-cold-5k.jpg);background-color: rgba(255,255,255,0.7);background-blend-mode: lighten;">
+        <div class="card-body">
+            <div class="row mb-4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSvbmQ-tQLMbfDHL5MgHX2a7ar-p1mpjN_V-3GI78jE1MDJSU9P&usqp=CAU"
+                    style="opacity:60%" class="avatar" />
+                <h6 class="userid col-9  align-self-center">by theuser_{{post.userId}}</h6>
+            </div>
+            <hr class="mt-n1" />
+            <h4 class="card-title mt-4 mb-2"><span class="id">#{{post.id}}</span> {{post.title}}</h4>
+        </div>
+
+        <p class="card p-4 pt-n4 border-0" style="background:white">{{post.body}}</p>
+        <h6 class="card-title mt-3 comments text-right">
+            <svg class="bi bi-chat-square-fill mr-1" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+            </svg>
+            {{comments.length}} comment(s)
+        </h6>
+    </div>
+</div>
+
+<div class="row w-100 comment">
+    <h4 class="m-4 title">
+        Comments
+    </h4>
+    <div class="input-group m-4">
+        <input type="text" class="form-control" placeholder="Search comment" [(ngModel)]="searchKeyword">
+    </div>
+    <div class="card col-12 border-0" style="background:unset" *ngFor="let comment of comments | filter:searchKeyword">
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSvbmQ-tQLMbfDHL5MgHX2a7ar-p1mpjN_V-3GI78jE1MDJSU9P&usqp=CAU"
+                        style="opacity:60%" class="avatar commenter" />
+                </div>
+                <div class="col-11">
+                    <h6 class="card-title commenter-name mb-n1">
+                        {{comment.name}}
+                    </h6>
+                    <span class="commenter-email">
+                        <a href="mailto:Eliseo@gardner.biz">{{comment.email}}</a>
+                    </span>
+                </div>
+                <div class="col-1">
+                    <p></p>
+                </div>
+                <div class="col-11 mt-3">
+                    <h5 class="comment-text">{{comment.body}}</h5>
+                </div>
+            </div>
+            <hr/>
+        </div>
+        
+    </div>
+
+    
+
+</div>

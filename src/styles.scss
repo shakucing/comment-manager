@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background:lightsteelblue !important;
+}
+
+.id, .userid {
+    vertical-align: middle;
+    color:lightgrey;
+    margin-right:1rem;
+}
+
+app-post-details .id, .userid, .comments {
+    color:white;
+}
+
+.userid{
+    font-size: 10pt;
+}
+
+h1{
+    color: white;
+}
+
+a:hover{
+    text-decoration: underline white;
+}
+
+.avatar{
+    border-radius:50%;
+    width:50px !important;
+    height:50px !important;
+}
+
+.avatar.commenter{
+    width:40px !important;
+    height:40px !important;
+}
+
+.comment{
+    .commenter-email{
+        font-size:10pt;
+    }
+
+    p,.commenter-name, .comment-text{
+        color:white;
+    }
+
+    .title{
+        color:white;
+    }
+    
+}

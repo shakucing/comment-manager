@@ -1,0 +1,15 @@
+<div class="row w-100 p-1">
+    <div class="card col-12 m-3 border-0" *ngFor="let p of posts" [routerLink]="['/posts', p.id]">
+        <div class="card-body row">
+          <div class="col-3 justify-content-md-center">
+            <img src="https://wallpapersmug.com/download/2248x2248/f0932e/landscape-minimal-stars-cold-5k.jpg" class="card-img-left" style="width:10rem" alt="{{p.title}}">
+          </div>
+          <div  class="col-9">
+            <h5 class="card-title"><span class="id">#{{p.id}}</span> {{p.title}}</h5>
+            <hr class="m-n1"/>
+            <span class="userid  justify-content-md-right">by theuser_{{p.userId}}</span>
+            <p class="card-text mt-3">{{p.body}}</p>
+          </div>
+        </div>
+      </div>
+</div>
